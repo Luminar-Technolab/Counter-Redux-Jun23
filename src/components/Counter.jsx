@@ -12,6 +12,7 @@ function Counter() {
       }else{
         //dispatch action
         dispatch(incrementByAmount(Number(amount)))
+        setAmount("")
       }
     }
   return (
@@ -24,7 +25,7 @@ function Counter() {
                 <button onClick={()=>dispatch(increment())} className="btn btn-success">Increment</button>
             </div>
             <div className="d-flex mt-5">
-              <input type="text" className="form-control" placeholder='Enter Amount to be incremented!!!' onChange={e=>setAmount(e.target.value)} />
+              <input type="text" className="form-control" placeholder='Enter Amount to be incremented!!!' onChange={e=>setAmount(e.target.value)} value={amount} />
               <button onClick={handleIncrement} className="btn btn-primary ms-3">Increment By Amount</button>
             </div>
         </div>
